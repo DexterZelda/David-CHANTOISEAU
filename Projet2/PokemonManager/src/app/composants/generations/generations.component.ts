@@ -9,10 +9,9 @@ export class GenerationsComponent implements OnInit {
 
   // Variables
   private unAttribut = "Générations de POKEMONS";
-  private test = null;
-  private tabElements =  ["Pokemon1","Pokemon2","Pokemon3","Pokemon4"];
+  private tabPokemons = [];
   private compteur = 0;
-  private nbPokemon = this.tabElements.length;
+  private nbPokemon = 0;
 
   // Constructeur
   constructor() { }
@@ -28,17 +27,17 @@ export class GenerationsComponent implements OnInit {
   }
 
   ajouterPokemon() {
+    this.nbPokemon++;
     let tmpNom = "";
-    let num = this.nbPokemon.toString()+1;
+    let num = this.nbPokemon+this.nbPokemon+1;
     tmpNom += "Pokemon"+num.toString();
-    this.tabElements.push(tmpNom);
+    this.tabPokemons.push(tmpNom);
   }
 
   enleverPokemon() {
-    this.tabElements.pop();
+    this.tabPokemons.pop();
+    this.nbPokemon--;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

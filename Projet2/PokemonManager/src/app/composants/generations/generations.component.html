@@ -1,8 +1,9 @@
 <p>{{unAttribut}}</p>
-<p *ngIf="test">{{test}}</p>
-<span *ngFor="let element of tabElements">{{element+" "}}</span>
+<span *ngFor="let element of tabPokemons">{{element+" "}}</span>
 <button (click)="ajouterPokemon();" class="btn btn-primary">+1</button>
 <span>{{" "}}</span>
-<button (click)="enleverPokemon();" class="btn btn-danger">-1</button>
+<button (click)="enleverPokemon();" class="btn btn-danger" *ngIf="nbPokemon>0">-1</button>
+<p></p>
 <p>{{"Compteur = "+compteur+" "}}<button (click)="ajouterPlusUn();">+1</button>
-  <button (click)="resetCompteur();">{{" "}}Reset Compteur</button></p>
+  <span>{{" "}}</span>
+  <button (click)="resetCompteur();">Reset Compteur</button></p>
