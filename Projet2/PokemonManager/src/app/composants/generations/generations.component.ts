@@ -29,8 +29,7 @@ export class GenerationsComponent implements OnInit {
   ajouterPokemon() {
     this.nbPokemon++;
     let tmpNom = "";
-    let num = this.nbPokemon+this.nbPokemon+1;
-    tmpNom += "Pokemon"+num.toString();
+    tmpNom += "Pokemon"+this.nbPokemon.toString();
     this.tabPokemons.push(tmpNom);
   }
 
