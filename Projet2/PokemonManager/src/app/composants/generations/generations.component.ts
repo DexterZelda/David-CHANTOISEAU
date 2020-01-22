@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenerationsComponent implements OnInit {
 
+  private unAttribut = "ma phrase de generations.ts";
+
   constructor() { }
 
   ngOnInit() {
