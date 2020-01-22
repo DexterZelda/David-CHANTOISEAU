@@ -23,6 +23,10 @@ export class GenerationsComponent implements OnInit {
     console.log(this.compteur);
   }
 
+  resetCompteur() {
+    this.compteur = 0;
+  }
+
   ajouterPokemon() {
     let tmpNom = "";
     let num = this.nbPokemon.toString()+1;
