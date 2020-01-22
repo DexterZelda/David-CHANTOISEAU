@@ -21,7 +21,7 @@ export class PokemonsComponent implements OnInit {
     this._nbPokemon++;
     let tmpNom = "";
     tmpNom += "Pokemon "+this._nbPokemon.toString();
-    let tabNewPokemon = [tmpNom,"Catégorie","Type","Taille","Poid"];
+    let tabNewPokemon = [tmpNom," Catégorie : graine"," Type : feu"," Taille : 0.7 m"," Poids : 22 kg"];
     this._tabPokemons.push(tabNewPokemon);
   }
 

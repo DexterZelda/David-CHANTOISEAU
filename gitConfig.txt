@@ -1,0 +1,9 @@
+git config --global http.proxy http://10.136.0.248:8080 (dans cmd)
+
+PUIS dans WebStorm : VCS Commit et Push avec message puis URL de github
+en rentrant accès / mdp
+
+OK sur github.com dans le répertoire du Projet
+
+Have Fun
+--------

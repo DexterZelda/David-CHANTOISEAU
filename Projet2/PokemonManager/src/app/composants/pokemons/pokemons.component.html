@@ -2,4 +2,8 @@
 <button (click)="ajouterPokemon();" class="btn btn-primary">+1</button>
 <span>{{" "}}</span>
 <button (click)="enleverPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">-1</button>
-<div *ngFor="let element of _tabPokemons">{{element+" "}}</div>
+<div *ngIf="_tabPokemons">
+  <ul>
+    <li *ngFor="let element of _tabPokemons">{{element+" "}}</li>
+  </ul>
+</div>

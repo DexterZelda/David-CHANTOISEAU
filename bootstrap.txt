@@ -1,0 +1,25 @@
+DANS LE REPERTOIRE DU PROJET
+----------------------------
+(à la place du lien dans index.html)
+------------------------------------
+npm install --save bootstrap
+	ou
+npm install --save bulma
+
+et ligne 27 dans angular.json rajouter :
+----------------------------------------
+"./node_modules/bootstrap/dist/css/bootstrap.css"
+
+PUIS quitter le serveur et refaire : ng serve
+---------------------------------------------
+
+idem pour JQuery :
+------------------
+npm install --save jquery
+
+pour MAJ :
+----------
+npm update
+
+Have Fun
+--------
