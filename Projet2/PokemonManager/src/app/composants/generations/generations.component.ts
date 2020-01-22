@@ -9,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class GenerationsComponent implements OnInit {
 
   // Variables
-  private _titre = "Générations de POKEMONS";
+  private _titre = 'Générations de POKEMONS';
+  private  _tabGenerations = ['Génération I', 'Génération II', 'Génération II', 'Génération IV',
+    'Génération V', 'Génération VI', 'Génération VII', 'Génération VIII'];
+  private _date = new Date();
 
   // Constructeur
   constructor() { }

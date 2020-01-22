@@ -1,1 +1,10 @@
-<p>{{_titre}}</p>
+<div>
+<p class="text-success">{{_titre+" | "}}
+  {{_date | date : 'fullDate'}}{{" | "}}{{_date | date : 'shortTime'}}
+  <img src="assets/pokemon1.jpg" alt="Bienvenue à Pokemon City" height="44" width="44"></p>
+</div>
+<div *ngIf="_tabGenerations">
+  <ul *ngFor="let gen of _tabGenerations">
+    <li>{{gen}}</li>
+  </ul>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {tmpdir} from "os";
 
 @Component({
   selector: 'app-pokemons',
@@ -10,27 +11,18 @@ export class PokemonsComponent implements OnInit {
   // Variables
   private _titre = "Ajouter des POKEMONS";
   private _tabPokemons = [];
-  private _compteur = 0;
   private _nbPokemon = 0;
 
   // Constructeur
   constructor() { }
 
   // Méthodes
-  ajouterPlusUn() {
-    this._compteur++;
-    console.log(this._compteur);
-  }
-
-  resetCompteur() {
-    this._compteur = 0;
-  }
-
   ajouterPokemon() {
     this._nbPokemon++;
     let tmpNom = "";
-    tmpNom += "Pokemon"+this._nbPokemon.toString();
-    this._tabPokemons.push(tmpNom);
+    tmpNom += "Pokemon "+this._nbPokemon.toString();
+    let tabNewPokemon = [tmpNom,"Catégorie","Type","Taille","Poid"];
+    this._tabPokemons.push(tabNewPokemon);
   }
 
   enleverPokemon() {
