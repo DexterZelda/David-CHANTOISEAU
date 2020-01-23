@@ -1,9 +1,31 @@
-<p class="text-success">{{_titre}}</p>
+<p class="text-success">{{_titre}} | vous en avez : {{_nbPokemon}}
+  <span *ngIf="_nbPokemon>0"> | cliquez sur l'image pour votre Pokemon préféré</span></p>
 <button (click)="ajouterPokemon();" class="btn btn-primary">+1</button>
 <span>{{" "}}</span>
 <button (click)="enleverPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">-1</button>
+<span>{{" "}}</span>
+<button (click)="ajouterAllPokemon();" class="btn btn-primary">+ ALL</button>
+<span>{{" "}}</span>
+<button (click)="enleverAllPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">RESET ALL</button>
+<p></p>
+<div>
+  Votre Pokémon préféré : {{_monPokemonPrefered}}
+</div>
+<!-- vérification si le tableau de Pokemon existe -->
 <div *ngIf="_tabPokemons">
-  <ul>
-    <li *ngFor="let element of _tabPokemons">{{element+" "}}</li>
+  <!-- parcours du tableau des Pokémons -->
+  <ul *ngFor="let element of _tabPokemons">
+    <!-- juste à changer le margin-right pour afficher les Pokemons sur une ligne -->
+    <li style="float: left; margin-right: 80px">
+      <span class="text-primary"><img src={{element[0]}} height="78" width="78" (click)="majPokemonPrefered(element[1]);">
+        Nom : {{element[1]}}</span>
+      <ul class="text-info">
+        <li class="text-warning">{{element[2]}}</li>
+        <li class="text-danger">{{element[3]}}</li>
+        <li>{{element[4]}}</li>
+        <li>{{element[5]}}</li>
+        <li>{{element[6]}}</li><br>
+      </ul>
+    </li>
   </ul>
 </div>
