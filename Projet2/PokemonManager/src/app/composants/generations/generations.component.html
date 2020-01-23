@@ -1,10 +1,12 @@
 <div>
-<p class="text-success">{{_titre+" | "}}
-  {{_date | date : 'fullDate'}}{{" | "}}{{_date | date : 'shortTime'}}
-  <img src="assets/pokemon1.gif"></p>
+  <p class="text-success">{{_titre + " | "}}
+    {{_date | date : 'fullDate'}}{{" | "}}{{_date | date : 'shortTime'}}
+    <img src="assets/pokemon1.gif">
+  </p>
 </div>
 <div *ngIf="_tabGenerations">
-  <ul *ngFor="let gen of _tabGenerations">
-    <li>{{gen}}</li>
-  </ul>
+  <span *ngFor="let gen of _tabGenerations">
+    <button (click)="affPokemonGeneration(gen);" class="btn btn-success">{{gen}}</button>
+    {{" "}}
+  </span>
 </div>

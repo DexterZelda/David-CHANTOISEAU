@@ -19,6 +19,28 @@ export class GenerationsComponent implements OnInit {
   }
 
   // Méthodes
+  affPokemonGeneration(valeur) {
+    switch (valeur) {
+      case 'Génération I' :
+        break;
+      case 'Génération II' :
+        break;
+      case 'Génération III' :
+        break;
+      case 'Génération IV' :
+        break;
+      case 'Génération V' :
+        break;
+      case 'Génération VI' :
+        break;
+      case 'Génération VII' :
+        break;
+      case 'Génération VIII' :
+        break;
+      default :
+        break;
+    }
+  }
 
   ngOnInit() {
   }
