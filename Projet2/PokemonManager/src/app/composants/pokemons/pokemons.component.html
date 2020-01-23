@@ -7,24 +7,46 @@
 <button (click)="ajouterAllPokemon();" class="btn btn-primary">+ ALL</button>
 <span>{{" "}}</span>
 <button (click)="enleverAllPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">RESET ALL</button>
+<span>{{" "}}</span>
 <p></p>
 <div>
   Votre Pokémon préféré : {{_monPokemonPrefered}}
+  <br>
+  <button (click)="enleverPokemonPrefered();" type="button" class="btn btn-info"
+          *ngIf="_monPokemonPrefered!='aucun'">Supprimer votre Pokémon Préféré</button>
+  <br><br>
+  <ul *ngIf="_tabMonPrefered[0]">
+    <li>
+      <span class="text-primary"><img src={{_tabMonPrefered[1]}} height="78" width="78">
+        Nom : {{_tabMonPrefered[2]}}</span>
+      <ul class="text-info">
+        <li class="text-warning">{{_tabMonPrefered[3]}}</li>
+        <li class="text-danger">{{_tabMonPrefered[4]}}</li>
+        <li>{{_tabMonPrefered[5]}}</li>
+        <li>{{_tabMonPrefered[6]}}</li>
+        <li>{{_tabMonPrefered[7]}}</li>
+        <br>
+      </ul>
+    </li>
+  </ul>
 </div>
+<div class="p-3 mb-2 bg-primary text-white"></div>
 <!-- vérification si le tableau de Pokemon existe -->
 <div *ngIf="_tabPokemons">
   <!-- parcours du tableau des Pokémons -->
   <ul *ngFor="let element of _tabPokemons">
     <!-- juste à changer le margin-right pour afficher les Pokemons sur une ligne -->
     <li style="float: left; margin-right: 80px">
-      <span class="text-primary"><img src={{element[0]}} height="78" width="78" (click)="majPokemonPrefered(element[1]);">
-        Nom : {{element[1]}}</span>
+      <span class="text-primary"><img src={{element[1]}} height="78" width="78"
+                                      (click)="majPokemonPrefered(element[0]);">
+        Nom : {{element[2]}}</span>
       <ul class="text-info">
-        <li class="text-warning">{{element[2]}}</li>
-        <li class="text-danger">{{element[3]}}</li>
-        <li>{{element[4]}}</li>
+        <li class="text-warning">{{element[3]}}</li>
+        <li class="text-danger">{{element[4]}}</li>
         <li>{{element[5]}}</li>
-        <li>{{element[6]}}</li><br>
+        <li>{{element[6]}}</li>
+        <li>{{element[7]}}</li>
+        <br>
       </ul>
     </li>
   </ul>
