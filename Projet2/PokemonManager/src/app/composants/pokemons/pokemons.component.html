@@ -1,5 +1,5 @@
 <p class="text-success">{{_titre}} | vous en avez : {{_nbPokemon}}
-  <span *ngIf="_nbPokemon>0"> | cliquez sur l'image pour votre Pokemon préféré</span></p>
+  <span *ngIf="_nbPokemon>0" class="text-primary"> | cliquez sur l'image pour votre Pokemon préféré</span></p>
 <button (click)="ajouterPokemon();" class="btn btn-primary">+1</button>
 <span>{{" "}}</span>
 <button (click)="enleverPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">-1</button>
@@ -13,7 +13,7 @@
   Votre Pokémon préféré : {{_monPokemonPrefered}}
   <br>
   <button (click)="enleverPokemonPrefered();" type="button" class="btn btn-info"
-          *ngIf="_monPokemonPrefered!='aucun'">Supprimer votre Pokémon Préféré</button>
+          *ngIf="_tabMonPrefered[0]">Supprimer votre Pokémon Préféré</button>
   <br><br>
   <ul *ngIf="_tabMonPrefered[0]">
     <li>

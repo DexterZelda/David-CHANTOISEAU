@@ -10,13 +10,14 @@ import {tmpdir} from 'os';
 export class PokemonsComponent implements OnInit {
   // Variables
   private _titre = 'Ajouter des POKEMONS';
+  // chaque valeur est un tableau d'informations
   private _tabPokemons = [];
   private _nbPokemon = 0;
   // Nombre de Pokemon total (22/01/2020 - avec Génération 8)
   private NB_POKEMON = 890;
-  private _monPokemonPrefered = 'aucun';
   // Pokemons (0:id, 1:img, 2:nom, 3:géné, 4:cat, 5:type, 6:taille, 7:poids)
   private _tabMonPrefered = [];
+  private _monPokemonPrefered = 'aucun';
 
   // Constructeur
   constructor() {
@@ -75,7 +76,7 @@ export class PokemonsComponent implements OnInit {
         ok = true;
       }
       i++;
-    } while (!ok);
+    } while (!ok && i < this._nbPokemon);
   }
 
   // Enlever le Pokemon préféré
