@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {PokemonsService} from "../services/-pokemons.service";
 
 @Component({
   selector: 'app-generations',
@@ -6,19 +7,21 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./generations.component.css']
 })
 
+/**** Classe composant générations ****/
 export class GenerationsComponent implements OnInit {
 
-  // Variables
-  private _titre = 'Générations de POKEMONS';
+  // Variables ------------------------------
+  private _titre: string;
   private _tabGenerations = ['Génération I', 'Génération II', 'Génération II', 'Génération IV',
     'Génération V', 'Génération VI', 'Génération VII', 'Génération VIII'];
   private _date = new Date();
 
-  // Constructeur
-  constructor() {
+  // Constructeur appelant les services ------------
+  constructor(private monService: PokemonsService) {
   }
 
-  // Méthodes
+  // Méthodes ------------------
+  // Afficher dans le composant des Pokémons ceux de la génération concernée
   affPokemonGeneration(valeur) {
     switch (valeur) {
       case 'Génération I' :
@@ -37,11 +40,13 @@ export class GenerationsComponent implements OnInit {
         break;
       case 'Génération VIII' :
         break;
-      default :
+      default : alert('PB de clic sur un bouton Génération !');
         break;
     }
   }
 
+  // Phase d'initialisation de ce composant obligatoire
   ngOnInit() {
+    this._titre = 'Générations de POKEMONS';
   }
 }

@@ -1,0 +1,16 @@
+<!-- Affichage de ce composant qui est un Pokemon (FILS) -->
+<div>
+  <li style="margin-right: 80px">
+      <span class="text-primary"><img src={{element._imgPokemon}} height="78" width="78"
+                                      (click)="majPokemonPrefered(element._idPokemon);">
+        {{element._nomPokemon}}</span>
+    <ul>
+      <li class="text-warning">{{element._genPokemon}}</li>
+      <li class="text-danger">{{element._type1Pokemon}}</li>
+      <li class="text-danger">{{element._type2Pokemon}}</li>
+      <li class="text-info">{{element._taillePokemon}}</li>
+      <li class="text-info">{{element._poidsPokemon}}</li>
+      <br>
+    </ul>
+  </li>
+</div>

@@ -1,58 +1,38 @@
-<br>
-<p class="text-success">{{_titre}} | vous en avez : <span class="text-primary">{{_nbPokemon}}</span>
-  <span *ngIf="_nbPokemon>0 && _tabMonPrefered==null" class="text-primary">
-    | cliquez sur l'image pour votre Pokemon préféré</span></p>
-<button (click)="ajouterPokemon();" class="btn btn-primary">+1</button>
-<span>{{" "}}</span>
-<button (click)="enleverPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">-1</button>
-<span>{{" "}}</span>
-<button (click)="ajouterAllPokemon();" class="btn btn-primary">+ ALL</button>
-<span>{{" "}}</span>
-<button (click)="enleverAllPokemon();" class="btn btn-danger" *ngIf="_nbPokemon>0">RESET ALL</button>
-<span>{{" "}}
-<form>
-  <input type="search" placeholder="Entrez un mot-clef" name="the_search">
-</form>
-<p></p>
 <div>
-  Votre Pokémon préféré : {{_monPokemonPrefered}}
   <br>
-  <button (click)="enleverPokemonPrefered();" type="button" class="btn btn-info"
-          *ngIf="_tabMonPrefered">Supprimer votre Pokémon Préféré
+  <p class="text-success">{{_titre}} | vous en avez : <span
+    class="text-primary">{{_nbPok}}</span>
+    <span *ngIf="_nbPok>0 && _monPokemon==null" class="text-primary">
+    | cliquez sur l'image pour votre Pokemon préféré</span></p>
+  <button (click)="ajouterPokemon();" class="btn btn-primary">+1</button>
+  <span>{{" "}}</span>
+  <button (click)="enleverPokemon();" class="btn btn-danger" *ngIf="_nbPok>0">-1</button>
+  <span>{{" "}}</span>
+  <button (click)="ajouterAllPokemon();" class="btn btn-primary">+ ALL</button>
+  <span>{{" "}}</span>
+  <button (click)="enleverAllPokemon();" class="btn btn-danger" *ngIf="_nbPok>0">RESET ALL
   </button>
+  <span>{{" "}}</span>
+  <p></p>
+  <div>
+    Votre Pokémon préféré : {{monService._textePokemonPrefered}}
+    <br>
+    <button (click)="enleverPokemonPrefered();" type="button" class="btn btn-info"
+            *ngIf="monService._pokemon">Supprimer votre Pokémon Préféré
+    </button>
+  </div>
   <br>
-  <ul *ngIf="_tabMonPrefered">
-    <li>
-      <span class="text-primary"><img src={{_tabMonPrefered[1]}} height="78" width="78">
-        {{_tabMonPrefered[2]}}</span>
-      <ul>
-        <li class="text-warning">{{_tabMonPrefered[3]}}</li>
-        <li class="text-danger">{{_tabMonPrefered[4]}}</li>
-        <li class="text-danger">{{_tabMonPrefered[5]}}</li>
-        <li class="text-info">{{_tabMonPrefered[6]}}</li>
-        <li class="text-info">{{_tabMonPrefered[7]}}</li>
-      </ul>
-    </li>
-  </ul>
-</div>
-<div class="p-3 mb-2 bg-primary text-white"><span *ngIf="_nbPokemon">Vos Pokémons</span></div>
-<!-- vérification si le tableau de Pokemon existe -->
-<div *ngIf="_tabPokemons">
-  <!-- parcours du tableau des Pokémons -->
-  <ul *ngFor="let element of _tabPokemons">
-    <!-- juste à changer le margin-right pour afficher les Pokemons sur une ligne -->
-    <li style="float: left; margin-right: 80px">
-      <span class="text-primary"><img src={{element[1]}} height="78" width="78"
-                                      (click)="majPokemonPrefered(element[0]);">
-        {{element[2]}}</span>
-      <ul>
-        <li class="text-warning">{{element[3]}}</li>
-        <li class="text-danger">{{element[4]}}</li>
-        <li class="text-danger">{{element[5]}}</li>
-        <li class="text-info">{{element[6]}}</li>
-        <li class="text-info">{{element[7]}}</li>
-        <br>
-      </ul>
-    </li>
-  </ul>
+  <div *ngIf="monService._pokemon">
+    <!-- Affichage du composant unpokemon dans ici (PERE) | sinon poke (choix)="choice=$event" au besoin -->
+    <app-unpokemon [element]=monService._pokemon></app-unpokemon>
+  </div>
+  <div class="p-3 mb-2 bg-primary text-white"><span *ngIf="_nbPok>0">Vos Pokémons</span></div>
+  <!-- Vérification si le tableau de Pokemon existe -->
+  <div *ngIf="_Pokemons">
+    <!-- Parcours du tableau des Pokémons -->
+    <ul *ngFor="let unPokemon of _Pokemons">
+      <!-- Affichage du composant unpokemon dans ici (PERE) | sinon poke (choix)="choice=$event" au besoin -->
+      <app-unpokemon style="float:left" [element]=unPokemon></app-unpokemon>
+    </ul>
+  </div>
 </div>
